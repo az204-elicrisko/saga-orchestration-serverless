@@ -33,4 +33,4 @@
     "AzureWebJobsStorage": "DefaultEndpointsProtocol=https;AccountName=tlifuncstoreelicrisko;AccountKey=fKknNygJ9r6FSqmJ593yitXmWnVeGkDM4GSGLmFjOmrlvWRqsREScEvJTjZcT9DA0p2GWu5xlNJ5+AStDdxcrw==;EndpointSuffix=core.windows.net",
     "FUNCTIONS_WORKER_RUNTIME": "dotnet"
   }
-}
+} 
