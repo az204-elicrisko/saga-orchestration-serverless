@@ -1,8 +1,8 @@
 terraform {
   backend "azurerm" {
-    # modify the values for the storage account 12
-    storage_account_name = "funcstorelicrisko"
-    container_name       = "testingterraform"
+    # modify the values for the storage account
+    storage_account_name = "storeterraformeli1"
+    container_name       = "blobterraformeli"
     key                  = "terraform.tfstate"
   }
 }
