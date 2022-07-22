@@ -26,7 +26,7 @@ jobs:
           tf_actions_subcommand: 'init'
           tf_actions_working_dir: './iac'
         env:
-          TF_CLI_ARGS_init: '-backend-config="sas_token=?sv=2021-06-08&ss=bfqt&srt=sco&sp=rwdlacupiytfx&se=2022-07-21T02:43:37Z&st=2022-07-20T18:43:37Z&spr=https&sig=WtIFL93K0eycy5emA6JyvFEvq3dQmOOU95CBpB0PGjM%3D"'
+          TF_CLI_ARGS_init: '-backend-config="sas_token=${{secrets.sas_token}}"'
       - name: 'Terraform Validate'
         uses: hashicorp/terraform-github-actions@master
         with:
@@ -39,12 +39,11 @@ jobs:
           tf_actions_version:  0.12.24
           tf_actions_subcommand: 'plan'
           tf_actions_working_dir: './iac'
-          args: '-var=client_secret=qnn8Q~UP.dcT2GipyuMaJxIPGNEwZxsZBREnxa7L -var=sub=af7745b1-ab8f-4cae-a414-32f0adfa9955 -var=client_id=1434a8a3-327a-4a8c-b791-592f2b161c16 -var=tenant_id=4f247355-a1ce-4e44-84be-f748c2495339'
+          args: '-var=client_secret=${{secrets.clientSecret}} -var=sub=${{secrets.subscription}} -var=client_id=${{secrets.clientId}} -var=tenant_id=${{secrets. tenantId}}'
       - name: 'Terraform Apply'
         uses: hashicorp/terraform-github-actions@master
         with:
           tf_actions_version:  0.12.24
           tf_actions_subcommand: 'apply'
           tf_actions_working_dir: './iac'
-          args: '-var=client_secret=qnn8Q~UP.dcT2GipyuMaJxIPGNEwZxsZBREnxa7L -var=sub=af7745b1-ab8f-4cae-a414-32f0adfa9955 -var=client_id=1434a8a3-327a-4a8c-b791-592f2b161c16 -var=tenant_id=4f247355-a1ce-4e44-84be-f748c2495339'
-      
+          args: '-var=client_secret=${{secrets.clientSecret}} -var=sub=${{secrets.subscription}} -var=client_id=${{secrets.clientId}} -var=tenant_id=${{secrets. tenantId}}'
